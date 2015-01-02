@@ -1,0 +1,27 @@
+<html ng-app="validationExample">
+	<head>
+		<title>1-example</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div ng-controller="signupController">
+			<form name="form.signup_form" novalidate ng-submit="submitForm(data)">
+			  <label>Your name</label>
+       	 		<input type="email"
+	       	 		placeholder="Email"
+	       	 		name="email"
+	       	 		ng-model="data.email"
+				    required />
+				<div class="error-container" ng-show="signup_form.submitted">
+					<span class="error" ng-show="emailRequired">
+      				Email Required!</span>
+      				<span class="error" ng-show="invalidEmail">
+      				Not valid email!</span>
+				</div>    
+				<button type="submit" class="button radius">Submit</button>
+			</form>
+		</div>
+		<script src="/home/ahmadh/learning/form-validation-angularjs/assets/javascripts/angular.min.js"></script>
+		<script src="/home/ahmadh/learning/form-validation-angularjs/assets/javascripts/app.js"></script>
+	</body>
+</html>
